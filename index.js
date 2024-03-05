@@ -19,7 +19,7 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
-app.use("/api", router);
+app.use("https://mern-todo-app-six-phi.vercel.app/", router);
 
 const port = process.env.PORT || 5000;
 
