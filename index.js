@@ -19,10 +19,17 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
-app.use("https://mern-todo-app-six-phi.vercel.app/", router);
+app.get("/", (req, res) => {
+  res.send({
+    Project: "Welcome to MERN TODO APP",
+    ["Project Owner"]: "Ömer Coşkun",
+  });
+});
 
-const port = process.env.PORT || 5000;
+app.use(router);
+
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-  console.log(`Server is listening on http://localhost:${port} `);
+  console.log(`Server is listening on http://127.0.0.1:${port} `);
 });
